@@ -29,8 +29,7 @@ module.exports = class {
   }
 
   getLogger(category) {
-    this[_logger] = log4js.getLogger(category);
-    return this[_logger];
+    return log4js.getLogger(category);
   }
 
   /**
