@@ -15,9 +15,10 @@ declare namespace ThinkLogger {
     info(msg: string): void;
     warn(msg: string): void;
     error(msg: string): void;
-    configure(config: Log4jsConfig | string): any;
-    setLogger(config: Log4jsConfig | string): any;
-    formatConfig(config: Log4jsConfig | string): Log4jsConfig;
+    configure(config: Log4jsConfig): any;
+    setLogger(config: Log4jsConfig, category: string): any;
+    formatConfig(config: Log4jsConfig): Log4jsConfig;
+    getLogger(category: string): Logger;
   }
 
   interface Console extends Base {}
@@ -31,6 +32,7 @@ declare namespace ThinkLogger {
     info(msg: string): void;
     warn(msg: string): void;
     error(msg: string): void;
+    getLogger(category: string): Logger;
   }
 
   export interface LoggerConstructor {

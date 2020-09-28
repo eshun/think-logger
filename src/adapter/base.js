@@ -28,6 +28,11 @@ module.exports = class {
     return this[_logger].error(...args);
   }
 
+  getLogger(category) {
+    this[_logger] = log4js.getLogger(category);
+    return this[_logger];
+  }
+
   /**
    * log4js configure
    */
